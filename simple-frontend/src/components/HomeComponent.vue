@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-const API_URL = window.env.VUE_APP_API_URL || "http://localhost:30100"; // Fallback for local dev
+const API_URL = window.env.VUE_APP_API_URL || "http://207.154.234.190:30100"; // Fallback for local dev
 export default {
     data() {
         return {
