@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-const API_URL = process.env.VUE_APP_API_URL || "http://localhost:30100";
+const API_URL = `${window.location.origin}/api`;
 
 export default {
     data() {
