@@ -45,6 +45,12 @@ jobs:
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
+    - name: Install kubectl
+      uses: azure/setup-kubectl@v4
+      with:
+        version: 'v1.31.2'
+      id: install
+
     - name: Deploy to Kubernetes
       run: |
         kubectl apply -f simple-rust-backend/kubernetes/backend.yaml
