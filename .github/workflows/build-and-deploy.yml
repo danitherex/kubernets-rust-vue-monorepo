@@ -45,6 +45,10 @@ jobs:
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
+    - name: Remove pre-existing kubectl (if any)
+      run: |
+        sudo rm -f /usr/local/bin/kubectl
+
     - name: Install kubectl
       uses: azure/setup-kubectl@v4
       with:
