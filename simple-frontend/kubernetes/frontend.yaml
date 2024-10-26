@@ -19,6 +19,12 @@ spec:
         image: danitherex/simple-vue-frontend
         ports:
         - containerPort: 80
+        env:
+          - name: VUE_APP_API_URL
+            valueFrom:
+              configMapKeyRef:
+                name: frontend-config
+                key: BACKEND_API_URL
 
 ---
 
