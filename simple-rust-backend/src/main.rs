@@ -14,7 +14,7 @@ async fn main() {
         .allow_methods(vec![Method::GET, Method::POST])
         .allow_headers(Any);
 
-    let app = Router::new().route("/api/endpoint", get(|| async { "Hello, Rust!" }))
+    let app = Router::new().route("/endpoint", get(|| async { "Hello, Rust!" }))
     .layer(middleware::from_fn(logging_middleware))
     .layer(cors);
 
