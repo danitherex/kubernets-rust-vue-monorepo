@@ -47,5 +47,5 @@ jobs:
 
     - name: Deploy to Kubernetes
       run: |
-        kubectl apply -f simple-frontend/kubernetes/backend.yml
+        kubectl apply -f simple-rust-backend/kubernetes/backend.yml
         kubectl apply -f simple-frontend/kubernetes/frontend.yml
