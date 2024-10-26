@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts">
-const API_URL = "http://rust-backend-deployment:8080";
+const API_URL = "http://rust-backend-deployment:30100";
 
 export default {
     data() {
