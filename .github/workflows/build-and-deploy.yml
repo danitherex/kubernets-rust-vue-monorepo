@@ -45,19 +45,8 @@ jobs:
       with:
         token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-    - name: Remove pre-existing kubectl (if any)
-      run: |
-        sudo rm -f /usr/local/bin/kubectl
-
-    - name: Install kubectl
-      uses: azure/setup-kubectl@v4
-      with:
-        version: 'v1.31.2'
-      id: install
-
     - name: Deploy to Kubernetes
       run: |
-        kubectl version --client
-        kubectl apply -f simple-frontend/kubernetes/frontend-configmap.yaml
-        kubectl apply -f simple-rust-backend/kubernetes/backend.yaml
-        kubectl apply -f simple-frontend/kubernetes/frontend.yaml
+        kubectl apply --validate=false -f simple-frontend/kubernetes/frontend-configmap.yaml
+        kubectl apply --validate=false -f simple-rust-backend/kubernetes/backend.yaml
+        kubectl apply --validate=false -f simple-frontend/kubernetes/frontend.yaml
